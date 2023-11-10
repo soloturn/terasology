@@ -82,6 +82,10 @@ if (project.name == "ModuleTestingEnvironment") {
         add("implementation", platform("org.junit:junit-bom:5.8.1"))
         implementation("org.junit.jupiter:junit-jupiter-api")
         implementation("org.mockito:mockito-junit-jupiter:3.12.4")
+
+        // spotbugs annotations to suppress warnings are not included via spotbugs plugin
+        // see bug: https://github.com/spotbugs/spotbugs-gradle-plugin/issues/1018
+        compileOnly("com.github.spotbugs:spotbugs-annotations:4.8.1")
     }
 }
 
